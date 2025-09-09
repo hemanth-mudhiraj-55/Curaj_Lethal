@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curaj Lethal Volleyball Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a; /* Dark Black */
+            color: #f5f5f5;
+        }
+        .asimovian {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+        }
+        .accent-color {
+            color: #dc2626; /* Red */
+        }
+        .bg-accent {
+            background-color: #dc2626;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(10, 10, 10, 0.5), rgba(10, 10, 10, 0.5)), url(background.png);
+            background-size: cover;
+            background-position: center;
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+        }
+        .nav-link:hover {
+            color: #dc2626;
+        }
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: #dc2626;
+            border-radius: 2px;
+        }
+        .player-card, .gallery-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .player-card:hover, .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(220, 38, 38, 0.2), 0 10px 10px -5px rgba(220, 38, 38, 0.1);
+        }
+        /* Gallery Modal */
+        #galleryModal {
+            transition: opacity 0.3s ease;
+        }
+        .quote-card {
+            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+            border-left: 4px solid #dc2626;
+        }
+        .telugu-font {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-weight: 500;
+        }
+        .captain-section {
+            background: linear-gradient(to right, #1a1a1a, #000);
+        }
+        .developer-card {
+            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+            border-top: 4px solid #dc2626;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+
+    <!-- Header / Navigation Bar -->
+    <header id="header" class="bg-black/90 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+           <a href="#home" class="flex items-center space-x-2">
+                 <img src="Lethal Curaj.png" alt="Curaj Lethal" class="w-12 h-12">
+                 <span class="text-2xl font-bold tracking-wider asimovian">CURAJ LETHAL</span>
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-lg">HOME</a>
+                <a href="#team" class="nav-link text-lg">TEAM</a>
+                <a href="#captains" class="nav-link text-lg">CAPTAINS</a>
+                <a href="#gallery" class="nav-link text-lg">GALLERY</a>
+                <a href="#sponsors" class="nav-link text-lg">SPONSORS</a>
+                <!-- <a href="#developer" class="nav-link text-lg">DEVELOPER</a> -->
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#home" class="block py-2 nav-link">HOME</a>
+            <a href="#team" class="block py-2 nav-link">TEAM</a>
+            <a href="#captains" class="block py-2 nav-link">CAPTAINS</a>
+            <a href="#gallery" class="block py-2 nav-link">GALLERY</a>
+            <a href="#sponsors" class="block py-2 nav-link">SPONSORS</a>
+            <a href="#developer" class="block py-2 nav-link">DEVELOPER</a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- 1. Home Section -->
+        <section id="home" class="hero-bg min-h-screen flex items-center pt-24">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row items-center justify-between">
+                    <div class="lg:w-1/2 mb-12 lg:mb-0">
+                        <h1 class="text-5xl md:text-7xl font-black uppercase tracking-wider asimovian">
+                            CURAJ LETHAL
+                        </h1>
+                        <p class="text-2xl md:text-4xl mt-4 font-semibold text-red-600 asimovian">READY FOR THE CHALLENGE</p>
+                    </div>
+                    
+                    <div class="lg:w-1/2 space-y-8">
+                        <!-- Motivation Quotes -->
+                        <div class="quote-card p-6 rounded-lg">
+                            <p class="text-lg italic telugu-font">"గెలవడానికి ధైర్యం ఉన్నవాడే గెలుస్తాడు."</p>
+                        </div>
+
+                         <div class="quote-card p-6 rounded-lg">
+                            <p class="text-lg italic">"The harder the battle, the sweeter the victory."</p>
+                            <p class="text-red-600 mt-2">- Les Brown</p>
+                        </div>
+
+                        <div class="quote-card p-6 rounded-lg">
+                            <p class="text-lg italic">"सफलता की कुंजी आपके अकेले काम करने में नहीं, टीम के साथ आगे बढ़ने में है।"</p>
+                        </div>
+                                             
+                        <div class="quote-card p-6 rounded-lg">
+                            <p class="text-lg italic">"It's not whether you get knocked down, it's whether you get up."</p>
+                            <p class="text-red-600 mt-2">- Vince Lombardi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Team Section -->
+        <section id="team" class="py-20 bg-[#1a1a1a]">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-white-600">MEET THE CURAJ LETHALS</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-16">
+                    <!-- Player Cards -->
+                    <div class="player-card bg-black rounded-lg p-6 text-center">
+                        <img class="w-32 h-32 rounded-full mx-auto border-4 border-red-600" src="Rathod.png" alt="Rathod">
+                        <h3 class="text-2xl font-bold mt-4">RATHOD</h3>
+                        <p class="text-red-600 text-lg">SPIKER</p>
+                    </div>
+                    <div class="player-card bg-black rounded-lg p-6 text-center">
+                        <img class="w-32 h-32 rounded-full mx-auto border-4 border-red-600" src="Nikhil.png" alt="Nikhil">
+                        <h3 class="text-2xl font-bold mt-4">NIKHIL</h3>
+                        <p class="text-red-600 text-lg">ALL ROUNDER</p>
+                    </div>
+                     <div class="player-card bg-black rounded-lg p-6 text-center">
+                        <img class="w-32 h-32 rounded-full mx-auto border-4 border-red-600" src="Hemanth.png" alt="Hemanth">
+                        <h3 class="text-2xl font-bold mt-4">HEMANTH</h3>
+                        <p class="text-red-600 text-lg">SPIKER</p>
+                    </div>
+                    <div class="player-card bg-black rounded-lg p-6 text-center">
+                        <img class="w-32 h-32 rounded-full mx-auto border-4 border-red-600" src="Vijay.png" alt="Vijay">
+                        <h3 class="text-2xl font-bold mt-4">VIJAY</h3>
+                        <p class="text-red-600 text-lg">SETTER</p>
+                    </div>
+                    <div class="player-card bg-black rounded-lg p-6 text-center">
+                        <img class="w-32 h-32 rounded-full mx-auto border-4 border-red-600" src="Adii.png" alt="Aditya">
+                        <h3 class="text-2xl font-bold mt-4">ADITYA</h3>
+                        <p class="text-red-600 text-lg">SPIKER</p>
+                    </div>
+                    <div class="player-card bg-black rounded-lg p-6 text-center">
+                        <img class="w-32 h-32 rounded-full mx-auto border-4 border-red-600" src="Adarsh.png" alt="Adarsh">
+                        <h3 class="text-2xl font-bold mt-4">ADARSH</h3>
+                        <p class="text-red-600 text-lg">LIBERO</p>
+                    </div>
+                    <div class="player-card bg-black rounded-lg p-6 text-center">
+                        <img class="w-32 h-32 rounded-full mx-auto border-4 border-red-600" src="DigVijay.png" alt="DigVijay">
+                        <h3 class="text-2xl font-bold mt-4">DIGVIJAY</h3>
+                        <p class="text-red-600 text-lg">SPIKER</p>
+                    </div>
+                    <div class="player-card bg-black rounded-lg p-6 text-center">
+                        <img class="w-32 h-32 rounded-full mx-auto border-4 border-red-600" src="Chandan.png" alt="Chandan">
+                        <h3 class="text-2xl font-bold mt-4">CHANDAN</h3>
+                        <p class="text-red-600 text-lg">ALL ROUNDER</p>
+                    </div>
+                    <div class="player-card bg-black rounded-lg p-6 text-center">
+                        <img class="w-32 h-32 rounded-full mx-auto border-4 border-red-600" src="lucky.png" alt="Lucky">
+                        <h3 class="text-2xl font-bold mt-4">LUCKY</h3>
+                        <p class="text-red-600 text-lg">LIBERO</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Captains Words Section -->
+        <section id="captains" class="py-20 captain-section">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-white-600 text-center mb-16">WORDS FROM OUR LEADERS</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Captain's Message -->
+                    <div class="bg-black p-8 rounded-lg border border-red-600">
+                        <div class="flex items-center mb-6">
+                            <img class="w-20 h-20 rounded-full border-4 border-red-600" src="Rathod.png" alt="Rathod">
+                            <div class="ml-6">
+                                <h3 class="text-2xl font-bold asimovian">RATHOD</h3>
+                                <p class="text-red-600">CAPTAIN</p>
+                            </div>
+                        </div>
+                        <p class="text-lg italic">"As the captain of Curaj Lethal, I'm proud of each player's dedication. We've trained hard to build a team that plays with strategy, skill, and heart. Every match is an opportunity to showcase our teamwork and determination. Let's continue to dominate the court with our lethal plays!"</p>
+                    </div>
+                    
+                    <!-- Vice Captain's Message -->
+                    <div class="bg-black p-8 rounded-lg border border-red-600">
+                        <div class="flex items-center mb-6">
+                            <img class="w-20 h-20 rounded-full border-4 border-red-600" src="Nikhil.png" alt="Nikhil">
+                            <div class="ml-6">
+                                <h3 class="text-2xl font-bold asimovian">NIKHIL</h3>
+                                <p class="text-red-600">VICE CAPTAIN</p>
+                            </div>
+                        </div>
+                        <p class="text-lg italic">"Being part of Curaj Lethal has been an incredible journey. Our strength lies in our unity and the trust we have in each other's abilities. We've faced challenges head-on and emerged stronger every time. I'm excited to see how far we can push our limits together as a team."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      <!-- Live Stream Section -->
+<section id="live" class="py-20 bg-black">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="section-title text-red-600">WATCH US LIVE!</h2>
+        <div class="mt-16 max-w-4xl mx-auto bg-black rounded-lg shadow-2xl overflow-hidden border border-red-600">
+            <!-- Responsive wrapper for the video -->
+            <div class="relative" style="padding-top: 56.25%"> <!-- 16:9 aspect ratio -->
+                <iframe 
+                    class="absolute top-0 left-0 w-full h-full" 
+                    src="" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- 3. Gallery Section -->
+        <section id="gallery" class="py-20 bg-[#1a1a1a]">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title">OUR BEST MOMENTS</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
+                    <div class="gallery-item overflow-hidden rounded-lg">
+                        <img src="Achivement_1.jpg" alt="Team celebration" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="gallery-item overflow-hidden rounded-lg">
+                        <img src="Achivement_2.jpg" alt="Action shot" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="gallery-item overflow-hidden rounded-lg">
+                        <img src="Achivement_3.jpg" alt="Spike action" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="gallery-item overflow-hidden rounded-lg">
+                        <img src="Achivement_4.jpg" alt="Team huddle" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="gallery-item overflow-hidden rounded-lg">
+                        <img src="Achivement_5.jpg" alt="Victory moment" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="gallery-item overflow-hidden rounded-lg">
+                        <img src="Achivement_6.jpg" alt="Championship moment" class="w-full h-64 object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 4. Sponsors Section -->
+        <section id="sponsors" class="py-20 bg-black">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-white-600">OUR SPONSOR</h2>
+                
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="flex justify-center">
+                        <img src="https://placehold.co/400x300/000000/FFFFFF?text=Premium+Sponsor" alt="Premium Sponsor" class="rounded-lg shadow-lg">
+                    </div>
+                    
+                    <div class="text-left">
+                        <h3 class="text-3xl font-bold text-red-600 mb-4 asimovian">INDIAN RESTAURANT</h3>
+                        <p class="text-lg mb-6">"हमें गर्व है कि हम Curaj Lethal के उत्कृष्टता की यात्रा में उनका साथ दे रहे हैं। उनकी लगन और टीम भावना उन मूल्यों को दर्शाती है जिन पर हम विश्वास करते हैं। हम चैंपियनों को आगे बढ़ाने में विश्वास रखते हैं और Curaj Lethal भारत में वॉलीबॉल के भविष्य का प्रतीक है।"</p>
+                        <p class="text-red-600 font-semibold">- Mr.Rajveer, Owner</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developer Section -->
+        <!-- <section id="developer" class="py-20 bg-[#1a1a1a]">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-white-600">WEB DEVELOPER</h2>
+                
+                <div class="developer-card max-w-2xl mx-auto p-8 rounded-lg mt-16">
+                    <div class="flex flex-col items-center">
+                        <img class="w-40 h-40 rounded-full border-4 border-red-600 mb-6" src="https://placehold.co/400x400/111827/FFFFFF?text=H" alt="Hemanth">
+                        <h3 class="text-3xl font-bold asimovian">Hemanth Mudhiraj</h3>
+                        <p class="text-red-600 text-lg mb-2">WEB DEVELOPER</p>
+                        <p class="text-lg mb-2">B.Tech Computer Science & Engineering</p>
+                        <p class="text-lg mb-2">Central University of Rajasthan</p>
+                        <p class="text-lg mb-4">Contact : +91 9392525718</p>
+
+                    </div>
+                </div>
+            </div>
+        </section> -->
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-red-600">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2025 Curaj Lethal Volleyball Team. All Rights Reserved.</p>
+            <p class="mt-2">Powered by dedication and teamwork</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            const mobileNavLinks = mobileMenu.querySelectorAll('a');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Smooth scrolling for all anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Header scroll effect
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('py-2');
+                    header.classList.remove('py-4');
+                } else {
+                    header.classList.add('py-4');
+                    header.classList.remove('py-2');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
